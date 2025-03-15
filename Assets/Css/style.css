@@ -1,0 +1,305 @@
+* {
+    font: 14px Arial, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    overflow-x: hidden;
+}
+.full-container, .container {
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.full-container {
+    width: 1200px;
+}
+
+.container {
+    width: 1000px;
+}
+
+.banner-bg {
+    background-image: url(../images/header_bg_1366x768.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 675px;
+}
+
+.banner-bg > .container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.navabar {
+    background-color: white;
+    border-radius: 15px;
+    height: 50px;
+}
+
+.navabar ul {
+    display: flex;
+    padding: 17px 20px 0 20px;
+}
+
+.navabar ul > li {
+    margin: 0 30px;
+}
+
+.navabar ul > li > a {
+    color: #000;
+    font-weight: bold;
+}
+
+.navabar ul > li > a:hover {
+    opacity: 0.5;
+}
+
+.content {
+    width: 1000px;  
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    position: absolute;
+    top: 585px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 5px;
+}
+
+.title h1 {
+    text-align: center;
+    color: #003056;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: x-large;
+    padding-top: 20px;
+}
+
+hr {
+    width: 70px;
+    margin: 5px auto;
+    border-color: #003056;
+}
+
+.text p {
+    color: #003056;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 17px;
+    padding: 5px 25px 30px 25px;
+}
+.section-2{
+    background-image: url(../images/Banner_6x1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 1200px;
+    height: 700px;
+    margin-top: 210px;
+    margin-bottom: -470px;
+}
+.section-2>.container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.quantity{
+    color: #fff;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+.position{
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+.section-content > p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #003056;
+}
+
+/* ====== GRID LAYOUT ====== */
+.display-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Chia thành 3 cột */
+    gap: 5px; 
+    justify-items: center;
+    margin: 20px auto;
+    max-width: 1100px;
+}
+
+/* Cấu hình các phần tử con */
+.display-grid .poster,
+.display-grid .landingpage,
+.display-grid .itstar,
+.display-grid .itcup {
+    width: 100%; /* Chiếm toàn bộ không gian trong cột */
+    border-radius: 0 0 10px 10px; /* Bo góc */
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline chiếm trọn 1 hàng (3 cột) */
+.display-grid .timeline {
+    grid-column: span 3;
+    text-align: center;
+}
+
+/* Hội nghị chiếm 2 cột */
+.display-grid .hoinghi {
+    grid-column: span 2;
+}
+
+/* Định dạng hình ảnh trong grid */
+.display-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.grid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Điều chỉnh responsive */
+@media (max-width: 1024px) {
+    .display-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .display-grid .timeline {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .display-grid {
+        grid-template-columns: 1fr;
+    }
+    .display-grid .timeline,
+    .display-grid .hoinghi {
+        grid-column: span 1;
+    }
+}
+.letter {
+    position: relative;
+    color: #ffffff; /* Màu chữ theo mẫu (có thể thay đổi tùy vào thiết kế) */
+    font-size: 18px; /* Điều chỉnh kích cỡ chữ */
+    font-weight: bold; /* Làm đậm chữ nếu cần */
+    overflow: visible;
+}
+
+/* Lớp phủ đen mờ ở phía dưới */
+.letter::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Chiều cao lớp phủ */
+    background: rgba(24, 44, 109, 0.6); /* Giữ độ mờ của nền */
+    border-radius: 0 0 10px 10px;
+}
+
+/* Văn bản hiển thị trên nền mờ */
+.letter p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    opacity: 1;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    z-index: 1;
+}
+
+/* Ảnh nền cho từng loại */
+.letter.poster {
+    background-image: url('../images/poster.jpg');
+}
+
+.letter.landingpage {
+    background-image: url('../images/landingpage.jpg');
+}
+
+.letter.itstar {
+    background-image: url('../images/itstar.jpg');
+}
+
+.letter.hoinghi {
+    background-image: url('../images/hoinghi.jpg');
+}
+
+.letter.itcup {
+    background-image: url('../images/itcup.jpg');
+}
+.timeline > img{
+    border-radius: 10px;
+}
+.poster img, 
+.landingpage img, 
+.itstar img, 
+.hoinghi img, 
+.itcup img {
+    border-radius: 10px !important;
+    overflow: hidden;
+    display: block;
+}
+footer {
+    background-color: #061743;
+    color: #fff;
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 50px; /* Tạo khoảng cách để dễ nhìn hơn */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng */
+}
+.conect{
+    display: flex;
+    gap: 30px;
+}
+.Title{
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 0 5px 0;
+    border-bottom: 1px solid #24325A;
+}
+.Content{
+    padding: 10px 0 70px 0;
+    line-height: 1.5;
+    width: 320px;
+}
+.Form{
+    padding-top: 10px;
+    display: grid;
+    row-gap: 4px;
+}
+.Enter > input, 
+.Enter > button {
+    width: 100%;
+    max-width: 300px; /* Giới hạn chiều rộng */
+}
+.Enter > button{
+    width: 350px;
+    color: #000;
+    background-color: #D0D0D0;
+    font-weight: bold;
+}
+button:hover{
+    opacity: 0.7;
+}
